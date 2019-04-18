@@ -1,0 +1,22 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  username: usuario
+  password: contraseña
+  pool: 5
+  timeout: 5000
+
+development:
+  <<: *default
+  host: localhost
+  database: db/development_capistrano
+
+test:
+  <<: *default
+  host: localhost
+  database: db/test_capistrano
+
+production:
+  <<: *default
+  host: localhost
+  database: production_capistrano
